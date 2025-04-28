@@ -1,0 +1,60 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ 
+    <style>
+        /* Main container using Flexbox */
+        #box {
+            display: flex; /* Enables flexbox for layout */
+            justify-content: flex-start; /* Aligns items to the left */
+        }
+ 
+        /* Styles for all direct div children of #box */
+        #box div {
+            width: 250px; /* Fixed width for the divs */
+            height: 600px; /* Fixed height for the divs */
+            background-color: rgb(255, 127, 172); /* Default background color */
+        }
+ 
+    </style>
+</head>
+<body>
+ 
+ 
+    <!-- First section with bisque background -->
+    <div style="background-color: white; width: 500px; height: 200px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <div style="width: 125px; height: 125px; border-radius: 50%; background-color: rgb(247, 12, 12); background-image: url('https://images.search.yahoo.com/search/images;_ylt=Awr.zoQq39dnjrkR6dZXNyoA;_ylu=Y29sbwNncTEEcG9zAzEEdnRpZAMEc2VjA3BpdnM-?p=registration+logo&fr2=piv-web&type=E211US885G0&fr=mcafee#id=3&iurl=https%3A%2F%2Flogodix.com%2Flogo%2F546047.png&action=click'); background-size: cover; background-position: center;"></div>
+        <p style="margin-top: 10px; font-size: 18px; font-weight: bold;">User Registration</p>
+    </div>
+   
+   
+   
+    <div id="box">
+        <!-- First section with bisque background -->
+        <div style="background-color: rgb(255, 0, 51); width: 250px; height: 600px">
+            <!-- Inner box inside the first section -->
+            <div style="background-color: rgb(153, 86, 229); width: 250px; height: 500px" <h2>HTML Forms</h2>
+
+                <form action="/action_page.php">
+                  <label for="fname">First name:</label><br>
+                  <input type="text" id="fname" name="fname" value="John"><br>
+                  <label for="lname">Last name:</label><br>
+                  <input type="text" id="lname" name="lname" value="Doe"><br><br>
+                  <input type="submit" value="Submit">
+                </form> 
+                
+                <p>If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".</p>
+                </div>
+        </div>
+ 
+        <!-- Second section with an empty paragraph -->
+        <div style="background-color: rgb(92, 6, 252); width: 250px; height: 600px"></div>
+    </div>
+ 
+</body>
+</html>
+
+ 
