@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Form Layout</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .box-container-left {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+      gap: 5px;
+    }
+
+    .box-container-left-top {
+      width: 700px;
+      height: 800px;
+      padding: 20px;
+      border: 5px solid rgb(93, 21, 21);
+      box-sizing: border-box;
+    }
+
+    .box-container-left-bottom {
+      width: 700px;
+      height: 200px;
+      padding: 20px;
+      border: 5px solid rgb(0, 17, 255);
+      box-sizing: border-box;
+    }
+
+    .box-container-right {
+      width: 700px;
+      height: 1000px;
+      border: 5px solid rgb(103, 3, 117);
+      box-sizing: border-box;
+      padding: 20px;
+      overflow-y: auto;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+    }
+
+    .btn-circle {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: rgb(1, 70, 22);
+    }
+
+    .box-container {
+      display: flex;
+      align-items: stretch;
+      gap: 20px;
+    }
+
+    .form-example div,
+    .login-form div {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      gap: 10px;
+    }
+
+    .form-example label,
+    .login-form label {
+      width: 150px;
+      font-weight: bold;
+    }
+
+    .form-example input,
+    .login-form input {
+      flex: 1;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .gender {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .gender input {
+      margin-left: 5px;
+    }
+
+    .box-container-left-top button,
+    .login-form button {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .box-container-left-top button:hover,
+    .login-form button:hover {
+      background-color: #0056b3;
+    }
+
+    /* Table styles */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 16px;
+      background-color: #f9f9f9;
+      margin-top: 10px;
+    }
+
+    .data-table th,
+    .data-table td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .data-table th {
+      background-color: #eee;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <header></header>
+
+  <main>
+    <section class="container">
+      <div>
+        <button class="btn-circle"></button>
+      </div>
+
+      <div>
+        <p>Registration Form</p>
+      </div>
+
+      <div class="box-container">
+        <!-- Left Column (Contains Two Boxes) -->
+        <div class="box-container-left">
+          <!-- Registration Form -->
+          <div class="box-container-left-top">
+            <form action="" method="get" class="form-example">
+              <div>
+                <label for="name">Fullname:</label>
+                <input type="text" name="name" id="name" required />
+              </div>
+              <div>
+                <label for="email">Email:</label>
+                <input type="text" name="email" id="email" required />
+              </div>
+              <div>
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" required />
+              </div>
+              <div>
+                <label for="confirm_password">Confirm Password:</label>
+                <input type="password" name="confirm_password" id="confirm_password" required />
+              </div>
+              <div>
+                <label for="dob">Date of Birth:</label>
+                <input type="date" name="dob" id="dob" required />
+              </div>
+              <div>
+                <label for="country">Country:</label>
+                <input type="text" name="country" id="country" required />
+              </div>
+              <div class="gender">
+                <label>Gender:</label>
+                <input type="radio" id="male" name="gender" value="male" required />
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="female" required />
+                <label for="female">Female</label>
+              </div>
+              <div>
+                <button type="submit">Submit</button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Login Form -->
+          <div class="box-container-left-bottom">
+            <form action="" method="post" class="login-form">
+              <div>
+                <label for="login-username">Login:</label>
+                <input type="text" id="login-username" name="login-username" required />
+              </div>
+              <div>
+                <label for="login-password">Password:</label>
+                <input type="password" id="login-password" name="login-password" required />
+              </div>
+              <div>
+                <button type="submit">Login</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Right Box with Table -->
+        <div class="box-container-right">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Serial</th>
+                <th>Name</th>
+                <th>Country</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>1</td><td>Saikat</td><td>Bangladesh</td></tr>
+              <tr><td>2</td><td>Jim</td><td>Australia</td></tr>
+              <tr><td>3</td><td>Mim</td><td>India</td></tr>
+              <tr><td>4</td><td>Data 4</td><td>Data D</td></tr>
+              <tr><td>5</td><td>Data 5</td><td>Data E</td></tr>
+              <tr><td>6</td><td>Data 6</td><td>Data F</td></tr>
+              <tr><td>7</td><td>Data 7</td><td>Data G</td></tr>
+              <tr><td>8</td><td>Data 8</td><td>Data H</td></tr>
+              <tr><td>9</td><td>Data 9</td><td>Data I</td></tr>
+              <tr><td>10</td><td>Data 10</td><td>Data J</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer></footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.querySelector(".form-example");
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value;
+        const confirmPassword = document.getElementById("confirm_password").value;
+        const dob = document.getElementById("dob").value;
+        const country = document.getElementById("country").value.trim();
+        const genderInput = document.querySelector('input[name="gender"]:checked');
+
+        const errors = [];
+
+        if (password.length < 8) {
+          errors.push("Password must be at least 8 characters long.");
+        }
+        if (/\s/.test(password)) {
+          errors.push("Password must not contain spaces.");
+        }
+        if (password !== confirmPassword) {
+          errors.push("Passwords do not match.");
+        }
+
+        if (dob) {
+          const dobDate = new Date(dob);
+          const today = new Date();
+          let age = today.getFullYear() - dobDate.getFullYear();
+          const m = today.getMonth() - dobDate.getMonth();
+          if (m < 0 || (m === 0 && today.getDate() < dobDate.getDate())) {
+            age--;
+          }
+          if (age < 18) {
+            errors.push("You must be at least 18 years old.");
+          }
+        } else {
+          errors.push("Please select your date of birth.");
+        }
+
+        if (!country) {
+          errors.push("Please enter/select a country.");
+        }
+
+        if (!genderInput) {
+          errors.push("Please select a gender.");
+        }
+
+        if (errors.length > 0) {
+          alert("Error:\n" + errors.join("\n"));
+          return;
+        }
+
+        const formData = {
+          name,
+          email,
+          password,
+          confirmPassword,
+          dob,
+          country,
+          gender: genderInput.value,
+        };
+
+        console.log("Form Submitted Successfully:", formData);
+        alert("Successfully! Check console for data.");
+        form.reset();
+      });
+
+      const loginForm = document.querySelector(".login-form");
+      loginForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const loginUsername = document.getElementById("login-username").value.trim();
+        const loginPassword = document.getElementById("login-password").value;
+
+        if (!loginUsername || !loginPassword) {
+          alert("Please enter login and password.");
+          return;
+        }
+
+        // Example hardcoded credentials
+        if (loginUsername === "admin" && loginPassword === "admin123") {
+          alert("Login successful!");
+        } else {
+          alert("Invalid credentials!");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
